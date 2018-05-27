@@ -15,7 +15,7 @@ class PlantCard extends Component {
                     <CardImg top width="200px" src={ this.props.image } />
                     <CardBody>
                         <CardTitle>{ this.props.nickname }</CardTitle>
-                        <CardSubtitle>{ this.props.genus }</CardSubtitle>
+                        <CardSubtitle className="plant-genus">{ this.props.genus }</CardSubtitle>
                     </CardBody>
                 </Card>
             </div>
