@@ -30,6 +30,8 @@ class App extends Component {
 
         <Container>
           <Row>
+            <Col xs={{ size: 6, offset: this.state.activeIndex === null ? 3 : 0 }} >
+                <Row>
             { plants.map((plant, i) => {
                 return (
                     <Col xs="4">
@@ -42,6 +44,10 @@ class App extends Component {
                     </Col>
                 );
             })}
+              </Row>
+            </Col>
+            <Col xs="3">
+            </Col>
           </Row>
         </Container>
       </div>
