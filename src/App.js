@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
 
+import plantimg from './images/Carla.png';
+
+import Card from '@material-ui/core/Card'
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Typography from '@material-ui/core/Typography';
+
 class App extends Component {
   state = {
     activeIndex: null
@@ -10,10 +17,10 @@ class App extends Component {
 
   render() {
     const plants = [
-        { name: 'Carla' },
-        { name: 'Patrick' },
-        { name: 'Julia' },
-        { name: 'Tony' }
+        { nickname: 'Carla', genus: 'Monsterra deliciosa' },
+        { nickname: 'Patrick', genus: 'Dracaena fragrans' },
+        { nickname: 'Julia', genus: 'Dracaena marginata' },
+        { nickname: 'Tony', genus: 'Ficus Elastica' }
     ];
 
     return (
@@ -22,11 +29,14 @@ class App extends Component {
           <h1 className="App-title">Plant Tracker</h1>
         </header>
 
-
-            <PlantCard name="Carla" index={0} isActive={ this.state.activeIndex===0 } onClick={ this.handleClick } />
-            <PlantCard name="Patrick" index={1} isActive={ this.state.activeIndex===1 } onClick={ this.handleClick }/>
-            <PlantCard name="Julia" index={2} isActive={ this.state.activeIndex===2 } onClick={ this.handleClick }/>
-
+        { plants.map((plant, i) => {
+            return <PlantCard key={ plant.nickname }
+                              nickname={ plant.nickname }
+                              genus={ plant.genus }
+                              index={ i }
+                              isActive={ this.state.activeIndex === i }
+                              onClick={ this.handleClick } />
+        })}
       </div>
     );
   }
@@ -42,9 +52,22 @@ class PlantCard extends Component {
     handleClick = () => { this.props.onClick(this.props.index); };
 
     render() {
-        return <div className={ this.props.isActive ? 'active' : 'test' } onClick={ this.handleClick }>
-            <span>{ this.props.name }</span>
-        </div>
+        return (
+            <Card className={ this.props.isActive ? 'active' : 'test' } onClick={ this.handleClick }>
+                <CardMedia image=" ">
+                    <img
+                        src={plantimg}
+                        title="Plant Image"
+                        width={191}
+                        height={157}
+                    />
+                </CardMedia>
+                <CardContent>
+                    <Typography className="nickname">{ this.props.nickname }</Typography>
+                    <Typography className="genus">{ this.props.genus }</Typography>
+                </CardContent>
+            </Card>
+        )
     }
 }
 
