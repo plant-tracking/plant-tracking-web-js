@@ -11,13 +11,13 @@ class PlantCard extends Component {
     render() {
         var statusAlertClasses = [];
         if (this.props.statusGroundmoisture != 1) {
-            statusAlertClasses.push( "mdi mdi-water" );
+            statusAlertClasses.push( "mdi mdi-water icon-active" );
         }
         if (this.props.statusLight != 1) {
-            statusAlertClasses.push( "mdi mdi-white-balance-sunny" );
+            statusAlertClasses.push( "mdi mdi-white-balance-sunny icon-active" );
         }
         if (this.props.statusTemp != 1) {
-            statusAlertClasses.push( "mdi mdi-thermometer" );
+            statusAlertClasses.push( "mdi mdi-thermometer icon-active" );
         }
 
         return (

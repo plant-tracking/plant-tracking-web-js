@@ -154,3 +154,11 @@
 .room-title {
   text-align: left;
 }
+
+.mdi-water.icon-active {
+  color: #4A90E2;
+}
+
+.mdi-thermometer.icon-active, .mdi-white-balance-sunny.icon-active {
+  color: #9B9B9B
+}
