@@ -21,7 +21,7 @@ class PlantDiagram extends Component {
 
     render () {
         return (
-            <LineChart width={400} height={200} data={this.state.waterData}>
+            <LineChart width={400} height={120} data={this.state.waterData}>
                 <YAxis type="number" domain={['dataMin - 3', 'dataMax + 3']} unit={this.state.unit} />
                 <Line type="monotone" dataKey="value" stroke="#8884d8" />
                 <Tooltip />

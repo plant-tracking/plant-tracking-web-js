@@ -16,9 +16,9 @@ class PlantStatusCard extends Component {
                         <CardSubtitle>{ this.props.genus }</CardSubtitle>
 
                         <div className="plant-status-lines">
-                            <PlantStatusLine statusType="groundmoisture" statusLevel="0" ></PlantStatusLine>
-                            <PlantStatusLine statusType="light" statusLevel="1"></PlantStatusLine>
-                            <PlantStatusLine statusType="temp" statusLevel="1"></PlantStatusLine>
+                            <PlantStatusLine statusType="groundmoisture" statusLevel={this.props.statusGroundmoisture} ></PlantStatusLine>
+                            <PlantStatusLine statusType="light" statusLevel={this.props.statusLight}></PlantStatusLine>
+                            <PlantStatusLine statusType="temp" statusLevel={this.props.statusTemp}></PlantStatusLine>
                         </div>
                     </CardBody>
                 </Col>
@@ -37,14 +37,14 @@ class PlantStatusLine extends Component {
                 'It\'s too warm for me!',
             ],
             'light': [
-                'I\'d like to have more sun exposure!',
+                'I\'d like to have more sun!',
                 'I have enough sun.',
                 'There is too much sun for me!',
             ],
             'groundmoisture': [
                 'Water me soon!',
-                'I have the perfect amount of water.',
-                'Please let me dry for a little time!',
+                'I have enough water.',
+                'Please let me dry a little!',
             ]
         };
 

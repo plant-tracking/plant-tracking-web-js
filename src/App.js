@@ -22,10 +22,38 @@ class App extends Component {
 
     render() {
         const plants = [
-            { nickname: 'Carla', genus: 'Monsterra deliciosa', image: carlaImg },
-            { nickname: 'Patrick', genus: 'Dracaena fragrans', image: patrickImg },
-            { nickname: 'Julia', genus: 'Dracaena marginata', image: juliaImg },
-            { nickname: 'Tony', genus: 'Ficus Elastica', image: tonyImg }
+            {
+                nickname: 'Carla',
+                genus: 'Monsterra deliciosa',
+                image: carlaImg,
+                statusGroundmoisture: 0,
+                statusLight: 1,
+                statusTemp: 1
+            },
+            {
+                nickname: 'Patrick',
+                genus: 'Dracaena fragrans',
+                image: patrickImg,
+                statusGroundmoisture: 1,
+                statusLight: 1,
+                statusTemp: 1
+            },
+            {
+                nickname: 'Julia',
+                genus: 'Dracaena marginata',
+                image: juliaImg,
+                statusGroundmoisture: 1,
+                statusLight: 0,
+                statusTemp: 1
+            },
+            {
+                nickname: 'Tony',
+                genus: 'Ficus Elastica',
+                image: tonyImg,
+                statusGroundmoisture: 1,
+                statusLight: 1,
+                statusTemp: 1
+            }
         ];
 
         return (
@@ -60,9 +88,12 @@ class App extends Component {
                         </Col>
                         <Col xs="6" className={ this.state.activeIndex === null ? 'd-none' : '' } >
                             {this.state.activeIndex !== null &&
-                                <PlantDashboard nickname={ plants[this.state.activeIndex].nickname }
-                                                genus={ plants[this.state.activeIndex].genus }
-                                                image={ plants[this.state.activeIndex].image } />
+                                <PlantDashboard nickname={plants[this.state.activeIndex].nickname}
+                                                genus={plants[this.state.activeIndex].genus}
+                                                image={plants[this.state.activeIndex].image}
+                                                statusGroundmoisture={plants[this.state.activeIndex].statusGroundmoisture}
+                                                statusLight={plants[this.state.activeIndex].statusLight}
+                                                statusTemp={plants[this.state.activeIndex].statusTemp}/>
                             }
                         </Col>
                     </Row>
