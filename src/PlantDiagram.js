@@ -9,13 +9,15 @@ class PlantDiagram extends Component {
          unit: ""
      };
 
-    getData = () => {
+    getWaterData = () => {
         axios.get('https://planttra.uber.space/nodejs/api/1/graphData?type='+this.props.type)
             .then(res => {
                 const data = res.data;
-                const unit = res.data[0].unit;
-                this.setState({ data })
-                this.setState({ unit })
+                if(res.data.length != 0) {
+                    const unit = res.data[0].unit;
+                    this.setState({ data })
+                    this.setState({ unit })
+                }
             })
     }
 
@@ -30,7 +32,7 @@ class PlantDiagram extends Component {
         );
     }
     componentDidMount(){
-        this.interval = setInterval(this.getData,1000);
+        this.interval = setInterval(this.getdata,1000);
     }
     componentWillUnmount() {
         clearInterval(this.interval);
