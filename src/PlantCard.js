@@ -9,8 +9,6 @@ class PlantCard extends Component {
     handleClick = () => { this.props.onClick(this.props.index); };
 
     render() {
-        const { classes } = this.props;
-
         return (
             <div>
                 <Card className={ this.props.isActive ? 'active' : 'inactive' } onClick={ this.handleClick }>

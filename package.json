@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^1.1.0",
+    "@mdi/font": "^2.4.85",
     "axios": "^0.18.0",
     "bootstrap": "^4.1.1",
     "react": "^16.4.0",

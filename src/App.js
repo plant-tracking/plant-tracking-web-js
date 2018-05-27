@@ -59,8 +59,11 @@ class App extends Component {
                             </Row>
                         </Col>
                         <Col xs="6" className={ this.state.activeIndex === null ? 'd-none' : '' } >
-                            { this.state.activeIndex !== null ? plants[this.state.activeIndex].nickname : '' }
-                            <PlantDashboard />
+                            {this.state.activeIndex !== null &&
+                                <PlantDashboard nickname={ plants[this.state.activeIndex].nickname }
+                                                genus={ plants[this.state.activeIndex].genus }
+                                                image={ plants[this.state.activeIndex].image } />
+                            }
                         </Col>
                     </Row>
                 </Container>
