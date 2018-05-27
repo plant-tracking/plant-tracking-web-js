@@ -13,7 +13,7 @@ class PlantStatusCard extends Component {
                 <Col xs="8">
                     <CardBody className="plant-status-card-text">
                         <CardTitle className="plant-status-card-title">{ this.props.nickname }</CardTitle>
-                        <CardSubtitle>{ this.props.genus }</CardSubtitle>
+                        <CardSubtitle className="plant-status-card-genus">{ this.props.genus }</CardSubtitle>
 
                         <div className="plant-status-lines">
                             <PlantStatusLine statusType="groundmoisture" statusLevel={this.props.statusGroundmoisture} ></PlantStatusLine>
