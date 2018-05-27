@@ -28,6 +28,7 @@ class PlantDashboard extends Component {
 
         return (
             <div>
+                <h1 className="room-title">&nbsp;</h1>
                 <PlantStatusCard nickname={ this.props.nickname }
                                  genus={ this.props.genus }
                                  image={ this.props.image }

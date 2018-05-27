@@ -31,3 +31,18 @@
 .plant-genus {
     font-weight: lighter;
 }
+
+.status-alert-circle {
+    position: absolute;
+    right: 0.7em;
+    margin-top: -2.2em;
+    background-color: white;
+    border-radius: 100%;
+    width: 34px;
+    height: 34px;
+    box-shadow: 0 0 6px 0 rgba(0,0,0,0.12), 0 6px 6px 0 rgba(0,0,0,0.24);
+}
+
+.status-alert-circle .mdi {
+    font-size: 1.4em;
+}

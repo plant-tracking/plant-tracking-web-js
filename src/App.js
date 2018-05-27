@@ -59,13 +59,15 @@ class App extends Component {
         return (
             <div className="App">
                 <header className="App-header">
-                    <h1 className="App-title">Plant Tracker</h1>
+                    <h1 className="App-title">Forget-me-not</h1>
                 </header>
+
 
 
                 <Container>
                     <Row>
                         <Col xs={{ size: 6, offset: this.state.activeIndex === null ? 3 : 0 }} >
+                            <h1 className="room-title">Bedroom</h1>
                             <Row>
                                 { plants.map((plant, i) => {
                                     return (
@@ -74,6 +76,9 @@ class App extends Component {
                                                        nickname={ plant.nickname }
                                                        genus={ plant.genus }
                                                        image={ plant.image }
+                                                       statusGroundmoisture={ plant.statusGroundmoisture }
+                                                       statusLight={ plant.statusLight }
+                                                       statusTemp={ plant.statusTemp }
                                                        index={ i }
                                                        isActive={ this.state.activeIndex === i }
                                                        onClick={ this.handleClick } />
@@ -86,7 +91,7 @@ class App extends Component {
                                 </div>
                             </Row>
                         </Col>
-                        <Col xs="6" className={ this.state.activeIndex === null ? 'd-none' : '' } >
+                        <Col xs="6" className={ this.state.activeIndex === null ? 'component-hidden' : 'component-showed' } >
                             {this.state.activeIndex !== null &&
                                 <PlantDashboard nickname={plants[this.state.activeIndex].nickname}
                                                 genus={plants[this.state.activeIndex].genus}
