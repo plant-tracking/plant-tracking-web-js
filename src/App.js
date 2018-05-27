@@ -19,6 +19,7 @@ class App extends Component {
     };
 
     handleClick = (index) => { this.setState({ activeIndex: index }); };
+    showDiagram = () => { this.setState({ diagramShowed: true }); };
 
     render() {
         const plants = [
@@ -91,14 +92,16 @@ class App extends Component {
                                 </div>
                             </Row>
                         </Col>
-                        <Col xs="6" className={ this.state.activeIndex === null ? 'component-hidden' : 'component-showed' } >
+                        <Col xs="6" className={ this.state.activeIndex === null ? 'component-hidden delayed' : 'component-showed delayed' } >
                             {this.state.activeIndex !== null &&
                                 <PlantDashboard nickname={plants[this.state.activeIndex].nickname}
                                                 genus={plants[this.state.activeIndex].genus}
                                                 image={plants[this.state.activeIndex].image}
                                                 statusGroundmoisture={plants[this.state.activeIndex].statusGroundmoisture}
                                                 statusLight={plants[this.state.activeIndex].statusLight}
-                                                statusTemp={plants[this.state.activeIndex].statusTemp}/>
+                                                statusTemp={plants[this.state.activeIndex].statusTemp}
+                                                showDiagram={this.showDiagram}
+                                                diagramShowed={this.state.diagramShowed}/>
                             }
                         </Col>
                     </Row>

@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 
-import { Row, Col } from 'reactstrap';
+import { Row, Col, Button } from 'reactstrap';
 
 import PlantDiagram from './PlantDiagram';
 import PlantStatusCard from './PlantStatusCard';
 
 class PlantDashboard extends Component {
-
     render () {
         const readableValueMapping = {
             'temp': [
@@ -36,41 +35,45 @@ class PlantDashboard extends Component {
                                  statusLight = {this.props.statusLight}
                                  statusTemp = {this.props.statusTemp}/>
 
-                <Row>
-                    <Col xs="3" className="diagram-legend">
-                        <i className="mdi mdi-water" aria-hidden="true"></i>
-                        <div>
-                            { readableValueMapping.groundmoisture[this.props.statusGroundmoisture] }
-                        </div>
-                    </Col>
-                    <Col xs="9">
-                        <PlantDiagram type="groundmoisture"/>
-                    </Col>
-                </Row>
+                <Button outline color="secondary" className={ this.props.diagramShowed !== undefined ? 'show-data-button component-hidden' : 'show-data-button component-showed' } onClick={ this.props.showDiagram }>Show data</Button>
 
-                <Row>
-                    <Col xs="3" className="diagram-legend">
-                        <i className="mdi mdi-white-balance-sunny" aria-hidden="true"></i>
-                        <div>
-                            { readableValueMapping.light[this.props.statusLight] }
-                        </div>
-                    </Col>
-                    <Col xs="9">
-                        <PlantDiagram type="light"/>
-                    </Col>
-                </Row>
+                <div id="diagram" className={ this.props.diagramShowed !== undefined ? 'component-showed' : 'component-hidden' } >
+                    <Row>
+                        <Col xs="3" className="diagram-legend">
+                            <i className="mdi mdi-water" aria-hidden="true"></i>
+                            <div>
+                                { readableValueMapping.groundmoisture[this.props.statusGroundmoisture] }
+                            </div>
+                        </Col>
+                        <Col xs="9">
+                            <PlantDiagram type="groundmoisture"/>
+                        </Col>
+                    </Row>
 
-                <Row>
-                    <Col xs="3" className="diagram-legend">
-                        <i className="mdi mdi-thermometer" aria-hidden="true"></i>
-                        <div>
-                            { readableValueMapping.temp[this.props.statusTemp] }
-                        </div>
-                    </Col>
-                    <Col xs="9">
-                        <PlantDiagram type="temp"/>
-                    </Col>
-                </Row>
+                    <Row>
+                        <Col xs="3" className="diagram-legend">
+                            <i className="mdi mdi-white-balance-sunny" aria-hidden="true"></i>
+                            <div>
+                                { readableValueMapping.light[this.props.statusLight] }
+                            </div>
+                        </Col>
+                        <Col xs="9">
+                            <PlantDiagram type="light"/>
+                        </Col>
+                    </Row>
+
+                    <Row>
+                        <Col xs="3" className="diagram-legend">
+                            <i className="mdi mdi-thermometer" aria-hidden="true"></i>
+                            <div>
+                                { readableValueMapping.temp[this.props.statusTemp] }
+                            </div>
+                        </Col>
+                        <Col xs="9">
+                            <PlantDiagram type="temp"/>
+                        </Col>
+                    </Row>
+                </div>
             </div>
         );
     }

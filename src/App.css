@@ -146,15 +146,25 @@
   line-height: 1.2em;
 }
 
-.row div.component-showed {
+.row div.component-showed, .component-showed {
   opacity: 1;
+  visibility: visible;
   transition: opacity 0.5s linear;
+}
+
+.row div.component-showed.delayed {
   transition-delay: 0.6s;
 }
 
-.row div.component-hidden {
+.row div.component-hidden, .component-hidden {
   opacity: 0;
+  visibility: hidden;
   transition: opacity 0.5s linear;
+}
+
+#diagram {
+  z-index: 1;
+  margin-top: -2.5em;
 }
 
 .room-title {
@@ -172,4 +182,10 @@
 
 .mdi-thermometer.icon-active, .mdi-white-balance-sunny.icon-active {
   color: #9B9B9B
+}
+
+.btn.show-data-button {
+  z-index: 999;
+  margin-top: 1em;
+  border-radius: 30px;
 }
