@@ -26,3 +26,12 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.plus{
+  width: 160px;
+  margin-left: 18px;
+}
+
+.imgPlus{
+  margin-top: 80px;
+}

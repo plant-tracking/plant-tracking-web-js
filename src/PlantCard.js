@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-import plantimg from './images/Carla.png';
-
 import './PlantCard.css';
 
 import { Card, CardImg, CardText, CardBody,
@@ -16,7 +14,7 @@ class PlantCard extends Component {
         return (
             <div>
                 <Card className={ this.props.isActive ? 'active' : 'inactive' } onClick={ this.handleClick }>
-                    <CardImg top width="200px" src={plantimg} />
+                    <CardImg top width="200px" src={ this.props.image } />
                     <CardBody>
                         <CardTitle>{ this.props.nickname }</CardTitle>
                         <CardSubtitle>{ this.props.genus }</CardSubtitle>
