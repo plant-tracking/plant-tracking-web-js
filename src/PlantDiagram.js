@@ -5,13 +5,17 @@ import axios from 'axios';
 
 class PlantDiagram extends Component {
      state = {
-         waterData: [] };
+         waterData: [],
+         unit: ""
+     };
 
     getWaterData = () => {
         axios.get('https://planttra.uber.space/nodejs/api/1/graphData?type='+this.props.type)
             .then(res => {
                 const waterData = res.data;
+                const unit = res.data[0].unit;
                 this.setState({ waterData })
+                this.setState({ unit })
             })
     }
 
