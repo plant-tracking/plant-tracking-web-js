@@ -5,17 +5,17 @@ import axios from 'axios';
 
 class PlantDiagram extends Component {
      state = {
-         waterData: [],
+         data: [],
          unit: ""
      };
 
     getWaterData = () => {
         axios.get('https://planttra.uber.space/nodejs/api/1/graphData?type='+this.props.type)
             .then(res => {
-                const waterData = res.data;
+                const data = res.data;
                 if(res.data.length != 0) {
                     const unit = res.data[0].unit;
-                    this.setState({ waterData })
+                    this.setState({ data })
                     this.setState({ unit })
                 }
             })
@@ -23,7 +23,7 @@ class PlantDiagram extends Component {
 
     render () {
         return (
-            <LineChart width={400} height={120} margin={{top: 20, right: 0, bottom: 0, left: 20}} data={this.state.waterData}>
+            <LineChart width={400} height={120} margin={{top: 20, right: 0, bottom: 0, left: 20}} data={this.state.data}>
                 <YAxis type="number" domain={['dataMin - 3', 'dataMax + 3']} unit={this.state.unit} />
                 <Line type="monotone" dataKey="value" stroke="#8884d8" />
                 <Tooltip />
@@ -32,7 +32,7 @@ class PlantDiagram extends Component {
         );
     }
     componentDidMount(){
-        this.interval = setInterval(this.getWaterData,1000);
+        this.interval = setInterval(this.getdata,1000);
     }
     componentWillUnmount() {
         clearInterval(this.interval);
