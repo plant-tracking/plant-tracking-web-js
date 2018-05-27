@@ -8,6 +8,24 @@ import PlantStatusCard from './PlantStatusCard';
 class PlantDashboard extends Component {
 
     render () {
+        const readableValueMapping = {
+            'temp': [
+                'cold',
+                'warm',
+                'hot',
+            ],
+            'light': [
+                'dark',
+                'moderate',
+                'bright',
+            ],
+            'groundmoisture': [
+                'dry',
+                'moderate',
+                'wet',
+            ]
+        };
+
         return (
             <div>
                 <PlantStatusCard nickname={ this.props.nickname }
@@ -18,8 +36,11 @@ class PlantDashboard extends Component {
                                  statusTemp = {this.props.statusTemp}/>
 
                 <Row>
-                    <Col xs="3">
-                        <i className="mdi mdi-water" aria-hidden="true"></i> Ground Moisture
+                    <Col xs="3" className="diagram-legend">
+                        <i className="mdi mdi-water" aria-hidden="true"></i>
+                        <div>
+                            { readableValueMapping.groundmoisture[this.props.statusGroundmoisture] }
+                        </div>
                     </Col>
                     <Col xs="9">
                         <PlantDiagram type="groundmoisture"/>
@@ -27,8 +48,11 @@ class PlantDashboard extends Component {
                 </Row>
 
                 <Row>
-                    <Col xs="3">
-                        <i className="mdi mdi-white-balance-sunny" aria-hidden="true"></i> Sun Exposure
+                    <Col xs="3" className="diagram-legend">
+                        <i className="mdi mdi-white-balance-sunny" aria-hidden="true"></i>
+                        <div>
+                            { readableValueMapping.light[this.props.statusLight] }
+                        </div>
                     </Col>
                     <Col xs="9">
                         <PlantDiagram type="light"/>
@@ -36,8 +60,11 @@ class PlantDashboard extends Component {
                 </Row>
 
                 <Row>
-                    <Col xs="3">
-                        <i className="mdi mdi-thermometer" aria-hidden="true"></i> Temperature
+                    <Col xs="3" className="diagram-legend">
+                        <i className="mdi mdi-thermometer" aria-hidden="true"></i>
+                        <div>
+                            { readableValueMapping.temp[this.props.statusTemp] }
+                        </div>
                     </Col>
                     <Col xs="9">
                         <PlantDiagram type="temp"/>
