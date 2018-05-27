@@ -1,0 +1,48 @@
+.inactive {
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.24);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.active {
+    box-shadow: 0 7px 20px 0px rgba(0,0,0,0.24);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.container {
+    margin-top: 2em;
+}
+
+.card {
+    margin-bottom: 2em;
+}
+
+.card-title, .card-subtitle {
+    text-align: left;
+}
+
+
+.genus {
+    font-size: 14px !important;
+    color: #4A4A4A !important;
+    text-align: left !important;
+    line-height: 24px !important;
+    user-select: none;
+}
+.nickname {
+    font-size: 24px !important;
+    color: #4A4A4A !important;
+    text-align: left !important;
+    line-height: 32px !important;
+    user-select: none;
+}
+
+.cirlce{
+    background: #FFFFFF;
+    box-shadow: 0 6px 6px 0 rgba(0,0,0,0.24);
+}
+.icon{
+    background: #4A90E2;
+}
+.cardAction{
+    display: block;
+}
