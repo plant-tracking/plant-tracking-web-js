@@ -22,7 +22,7 @@ class App extends Component {
                 nickname: 'Carla',
                 genus: 'Monsterra deliciosa',
                 image: carlaImg,
-                statusGroundmoisture: 0,
+                statusGroundmoisture: 1,
                 statusLight: 1,
                 statusTemp: 1
             },

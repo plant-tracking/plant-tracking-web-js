@@ -9,7 +9,7 @@ class PlantDiagram extends Component {
          unit: ""
      };
 
-    getWaterData = () => {
+    getData = () => {
         axios.get('https://planttra.uber.space/nodejs/api/1/graphData?type='+this.props.type)
             .then(res => {
                 const data = res.data;
@@ -32,7 +32,7 @@ class PlantDiagram extends Component {
         );
     }
     componentDidMount(){
-        this.interval = setInterval(this.getdata,1000);
+        this.interval = setInterval(this.getData,1000);
     }
     componentWillUnmount() {
         clearInterval(this.interval);
