@@ -20,8 +20,8 @@ class App extends Component {
         plants: [
             {
                 nickname: 'Carla',
-                genus: 'Monsterra deliciosa',
-                image: carlaImg,
+                genus: 'Dracaena marginata',
+                image: juliaImg,
                 statusGroundmoisture: 1,
                 statusLight: 1,
                 statusTemp: 1
@@ -36,8 +36,8 @@ class App extends Component {
             },
             {
                 nickname: 'Julia',
-                genus: 'Dracaena marginata',
-                image: juliaImg,
+                genus: 'Monsterra deliciosa',
+                image: carlaImg,
                 statusGroundmoisture: 1,
                 statusLight: 0,
                 statusTemp: 1
