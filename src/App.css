@@ -99,6 +99,10 @@
   left: -3px
 }
 
+.plant-status-card-text {
+  margin-left: 1em;
+}
+
 .plant-status-card-image {
   width: 200px;
   height: 200px;
@@ -108,4 +112,13 @@
 
 .plant-status-card-title {
   font-weight: bold;
+}
+
+.plant-status-lines {
+  margin-top: 1em;
+}
+
+.plant-status-line {
+  text-align: left;
+  font-size: 1.5em;
 }
